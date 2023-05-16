@@ -1,0 +1,30 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 0.7rem 3rem;
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  overflow: hidden; */
+}
+
+.navigator {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.navigator button{
+    padding: .3rem 1.2rem;
+    border: none;
+    background-color: #ebebeb;
+    border-radius: 2px ;
+    font-size: 18px;
+}
+nav a {
+  color: black;
+  text-decoration: none;
+}

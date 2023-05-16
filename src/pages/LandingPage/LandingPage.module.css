@@ -1,0 +1,7 @@
+.headerImage {
+  min-width: 320px;
+  width: 100%;
+
+  padding: 1rem;
+  cursor: pointer;
+}
