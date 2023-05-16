@@ -12,10 +12,10 @@ const Navbar = () => {
       <div className={classes.navigator}>
         <button className={classes.loginButton}>Login</button>
         <NavLink to="wishlist">
-          <AiOutlineHeart size="22" />
+          <AiOutlineHeart size="23" />
         </NavLink>
         <NavLink to="/cart">
-          <MdOutlineShoppingCart size="22" />
+          <MdOutlineShoppingCart size="23" />
         </NavLink>
       </div>
     </nav>
