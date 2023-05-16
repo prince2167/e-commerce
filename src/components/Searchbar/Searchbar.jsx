@@ -6,7 +6,7 @@ const Searchbar = () => {
     <div className={classes.group}>
       <CiSearch className={classes.icon}  />
       <input
-        placeholder="Search here..."
+        placeholder="Search here"
         type="search"
         className={classes.input}
       />
