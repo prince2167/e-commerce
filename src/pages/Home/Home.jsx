@@ -1,7 +1,6 @@
-import React from "react";
 import { useProducts } from "../../contexts/product-contex";
 import { ProductCard } from "../../components/index";
-import classes from "./Home.module.css"
+import classes from "./Home.module.css";
 const Home = () => {
   const { state } = useProducts();
   const { products } = state;
