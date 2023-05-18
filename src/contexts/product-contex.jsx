@@ -4,6 +4,7 @@ const ProductContext = createContext();
 
 const ProductProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productReducer, initialState);
+
   const removeWishlistHandler = (id) => {
     const updatedWishlist = state.wishlist.filter(
       (product) => product.productId !== Number(id)
