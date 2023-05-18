@@ -1,0 +1,68 @@
+.productCard {
+  position: relative;
+}
+.cardContainer {
+  max-width: 260px;
+  cursor: pointer;
+}
+.productCard:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+.wishlistButton {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+}
+.wishlistButton button {
+  border-radius: 50%;
+  border: none;
+  padding: 4px 6px;
+  cursor: pointer;
+}
+.removeWishlistButton {
+  color: red;
+}
+.productDetails {
+  margin: 0 10px;
+}
+
+.productDetails p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 23px;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.priceDetails {
+  display: flex;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.mrp {
+  font-size: 13px;
+  color: #5c6975;
+  text-decoration: line-through;
+}
+
+.discountDisplayLabel {
+  color: green;
+}
+
+.cartButton {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #001325;
+  color: #fff;
+}
