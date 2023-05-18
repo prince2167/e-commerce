@@ -1,0 +1,10 @@
+.cartpage {
+  display: flex;
+  justify-content: center;
+}
+
+.cartCardList{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
