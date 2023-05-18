@@ -1,0 +1,56 @@
+.CartCardContainer {
+  display: flex;
+  gap: 20px;
+  /* background-color: red; */
+  max-width: 360px;
+}
+
+.CartCardContainer img {
+  width: 140px;
+}
+.productDetails {
+  width: 100%;
+}
+.productDetails p {
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.priceDetails {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.mrp {
+  font-size: 14px;
+  color: #5c6975;
+  text-decoration: line-through;
+}
+
+.discountDisplayLabel {
+  color: green;
+}
+
+.cartButtonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 25px;
+  text-align: center;
+}
+
+.removeCartButton {
+  padding: 5px 0;
+  cursor: pointer;
+  border: 1px solid #5c6975;
+  background-color: #fff;
+}
+.moveWishlistButton {
+  padding: 5px 0;
+  cursor: pointer;
+  border: 1px solid #5c6975;
+  background-color: #fff;
+  color: #fc7684;
+}
