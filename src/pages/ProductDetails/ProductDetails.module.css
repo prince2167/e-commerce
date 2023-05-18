@@ -59,7 +59,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  color: red;
+  color: #fc7684;
 }
 .wishlistButton {
   border: 1px solid #5c6975;
@@ -71,7 +71,7 @@
 }
 
 .cartButton {
-  background-color: black;
+  background-color: #001325;
   color: white;
   border: none;
   padding: 10px 80px;
