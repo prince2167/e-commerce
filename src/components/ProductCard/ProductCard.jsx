@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { RiHeartAddLine, BsFillHeartFill } from "../../assets/icon";
 import classes from "./ProductCard.module.css";
 import { useProducts } from "../../contexts/product-contex";
-import { getIsInWishlist } from "../../utils";
+import { getIsInProducts } from "../../utils";
 const ProductsCard = ({ product }) => {
   const navigate = useNavigate();
   const { dispatch, state, removeWishlistHandler } = useProducts();
@@ -17,7 +17,7 @@ const ProductsCard = ({ product }) => {
     productId,
   } = product;
 
-  const isInWishlist = getIsInWishlist(wishlist, productId);
+  const isInWishlist = getIsInProducts(wishlist, productId);
 
   return (
     <div className={classes.productCard}>
