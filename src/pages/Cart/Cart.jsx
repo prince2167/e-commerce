@@ -1,9 +1,20 @@
-import React from 'react'
-
+import React from "react";
+import { useProducts } from "../../contexts/product-contex";
+import { CartCard } from "../../components/index";
+import classes from "./Cart.module.css"
 const Cart = () => {
-  return (
-    <div>Cart</div>
-  )
-}
+  const { state } = useProducts();
+  const { cart } = state;
 
-export default Cart
+  return (
+    <div className={classes.cartpage}>
+      <div className={classes.cartCardList}>
+        {cart.map((product) => (
+          <CartCard key={product.id} product={product} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Cart;
