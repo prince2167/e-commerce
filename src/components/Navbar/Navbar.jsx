@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import classes from "./Navbar.module.css";
 import { Searchbar } from "../index";
 import { MdOutlineShoppingCart, AiOutlineHeart } from "../../assets/icon";
@@ -6,6 +6,7 @@ import { useProducts } from "../../contexts/product-contex";
 const Navbar = () => {
   const { state } = useProducts();
   const { cart, wishlist } = state;
+  const navigate = useNavigate();
   return (
     <nav>
       <NavLink to="/">
@@ -13,7 +14,12 @@ const Navbar = () => {
       </NavLink>
       <Searchbar />
       <div className={classes.navigator}>
-        <button className={classes.loginButton}>Login</button>
+        <button
+          className={classes.loginButton}
+          onClick={() => navigate("/login")}
+        >
+          Login
+        </button>
 
         <div className={classes.wishlistNavlink}>
           <NavLink to="wishlist">
