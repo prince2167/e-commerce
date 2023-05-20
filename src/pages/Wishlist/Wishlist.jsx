@@ -1,11 +1,26 @@
+import { useNavigate } from "react-router";
+import { emptyWishlist } from "../../assets/images";
 import { WishlistCard } from "../../components/index";
 import { useProducts } from "../../contexts/product-contex";
 import classes from "./Wishlist.module.css";
 const Wishlist = () => {
   const { state } = useProducts();
   const { wishlist } = state;
+  const navigate = useNavigate();
   return (
-    <div>
+    <div className={classes.wishlistPage}>
+      {wishlist.length === 0 && (
+        <div className={classes.emptyWishlistCard}>
+          <img src={emptyWishlist} alt="Wishlist empty" />
+          <div className={classes.wishlistText}>
+            <h1>Your wishlist is empty!</h1>
+            <p>Save your favourite items so you don’t lose sight of them.</p>
+          </div>
+          <button onClick={() => navigate("/home")}>
+            Be inspired by the latest
+          </button>
+        </div>
+      )}
       <div className={classes.wishlistCardList}>
         {wishlist.map((product) => (
           <WishlistCard key={product.id} product={product} />
