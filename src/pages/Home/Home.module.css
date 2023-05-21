@@ -1,6 +1,30 @@
+.homePage {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+.xyz {
+  width: 15rem;
+}
 .cardList {
   display: flex;
   justify-content: center;
+  gap: 25px;
   flex-wrap: wrap;
-  gap: 20px;
+  width: calc(100% - 15rem);
+  /* background-color: red;  */
+}
+
+@media (max-width: 522px) {
+  /* .homePage{
+    flex-direction: column;
+    
+  }  */
+  .xyz{
+    display: none
+  }
+  .cardList {
+    align-items: center;
+    width: 100vw;
+  }
 }
