@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useProducts } from "../../contexts/product-contex";
 import { CartCard } from "../../components/index";
 import classes from "./Cart.module.css";
 import { emptyCart } from "../../assets/images";
 import { useNavigate } from "react-router";
 const Cart = () => {
-  const { state } = useProducts();
-  const { cart } = state;
+  const { state, dispatch } = useProducts();
+  const { cart, totalPrice, totalMrp } = state;
   const navigate = useNavigate();
+  useEffect(() => {
+    const updatedTotalPrice = cart?.reduce(
+      (acc, curr) => acc + curr.price * curr.quantity,
+      0
+    );
+    const updatedTotalMrp = cart?.reduce(
+      (acc, curr) => acc + curr.mrp * curr.quantity,
+      0
+    );
+    dispatch({
+      type: "TOTAL_PRICE",
+      payload: { updatedTotalPrice, updatedTotalMrp },
+    });
+  }, [cart]);
+  const discountPrice = totalMrp - totalPrice;
 
   return (
-    <div className={classes.cartpage}>
+    <>
       {cart.length === 0 && (
         <div className={classes.emptyCartCard}>
           <img src={emptyCart} alt="cart empty" />
@@ -24,12 +39,32 @@ const Cart = () => {
           </div>
         </div>
       )}
-      <div className={classes.cartCardList}>
-        {cart.map((product) => (
-          <CartCard key={product.id} product={product} />
-        ))}
+      <div className={classes.cartpage}>
+        <div className={classes.cartCardList}>
+          {cart.map((product) => (
+            <CartCard key={product.id} product={product} />
+          ))}
+        </div>
+
+        {cart.length > 0 && (
+          <div className={classes.priceContainer}>
+            <h2 className={classes.cardHeader}>Price Details</h2>
+            <div className={classes.priceDetails}>
+              <p>
+                Price: <span>₹{totalMrp}</span>{" "}
+              </p>
+              <p className={classes.discountPrice}>
+                Discount: <span>-₹{discountPrice}</span>
+              </p>
+            </div>
+
+            <h2 className={classes.totalAmount}>
+              Total Amount:<span>₹{totalPrice}</span>{" "}
+            </h2>
+          </div>
+        )}
       </div>
-    </div>
+    </>
   );
 };
 
