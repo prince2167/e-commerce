@@ -1,7 +1,7 @@
 .CartCardContainer {
   display: flex;
   gap: 20px;
-  /* background-color: red; */
+  background-color: red;
   max-width: 360px;
 }
 
@@ -37,7 +37,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 25px;
+  margin: 18px;
   text-align: center;
 }
 
@@ -53,4 +53,23 @@
   border: 1px solid #5c6975;
   background-color: #fff;
   color: #fc7684;
+}
+
+.qantityContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 5px;
+}
+.qantityContainer button {
+  width: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+@media (max-width: 365px) {
+  .CartCardContainer {
+    margin: 10px;
+  }
 }
