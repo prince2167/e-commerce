@@ -1,7 +1,10 @@
+.landingPage{
+  margin-top: 5rem;
+}
 .headerImage {
   min-width: 320px;
   width: 100%;
 
-  padding: 1rem;
+  padding: 0 1rem;
   cursor: pointer;
 }
