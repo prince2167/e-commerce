@@ -1,10 +1,100 @@
 .cartpage {
   display: flex;
   justify-content: center;
+  gap: 10rem;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+}
+/* empty Cart Card */
+.emptyCartCard {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  height: calc(100% - 5rem);
+  width: 300px;
+  margin: 10rem auto;
+}
+.emptyCartCard img {
+  width: 180px;
 }
 
-.cartCardList{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.emptyCartText {
+  text-align: center;
+}
+.emptyCartText h1 {
+  font-size: 22px;
+  margin: 20px 0 10px 0;
+}
+.emptyCartCard button {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  background-color: #011324;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+}
+
+/* cart list */
+.cartCardList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* price Container */
+
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  height: 200px;
+  padding: 15px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.cardHeader {
+  text-align: center;
+  font-size: 18px;
+  color: #5c6975;
+  width: 100%;
+  border-bottom: 1px solid #5c6975;
+  padding-bottom: 10px;
+}
+
+.priceDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 15px;
+  border-bottom: 1px dotted #5c6975;
+  padding: 20px;
+}
+
+.priceDetails p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.discountPrice span {
+  color: green;
+}
+
+.totalAmount {
+  padding: 0 15px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (mac-width: 820px) {
+  .cartpage {
+    gap: 3rem;
+  }
 }
