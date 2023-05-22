@@ -3,6 +3,13 @@ export const initialState = {
   products,
   wishlist: [],
   cart: [],
+  priceInput: "",
+  categoryFilters: [],
+  rating: "",
+  sortBy: "",
+  searchTerm: "",
+  totalMrp: "",
+  totalPrice: "",
 };
 
 export const productReducer = (state, action) => {
@@ -46,7 +53,56 @@ export const productReducer = (state, action) => {
         wishlist: [payload.product, ...state.wishlist],
       };
     }
+    case "PRICE_RANGE_INPUT": {
+      return {
+        ...state,
+        priceInput: payload,
+      };
+    }
+    case "CATEGORY_FILTERS": {
+      return {
+        ...state,
+        categoryFilters: payload,
+      };
+    }
 
+    case "RATING": {
+      return {
+        ...state,
+        rating: payload,
+      };
+    }
+    case "SORT_BY": {
+      return {
+        ...state,
+        sortBy: payload,
+      };
+    }
+    case "SEARCH_TERM": {
+      return {
+        ...state,
+        searchTerm: payload,
+      };
+    }
+    case "DECREASE_CART_PRODUCT_QUANTITY": {
+      return {
+        ...state,
+        cart: payload,
+      };
+    }
+    case "TOTAL_PRICE": {
+      return {
+        ...state,
+        totalPrice: payload.updatedTotalPrice,
+        totalMrp: payload.updatedTotalMrp,
+      };
+    }
+    case "EXISTING_PRODUCT": {
+      return {
+        ...state,
+        cart: payload,
+      };
+    }
     default:
       break;
   }
