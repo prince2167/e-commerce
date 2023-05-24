@@ -98,3 +98,9 @@
     gap: 3rem;
   }
 }
+
+@media (max-width: 830px) {
+  .cartpage{
+    margin-top: 7rem;
+  }
+}
