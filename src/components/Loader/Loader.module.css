@@ -1,0 +1,42 @@
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.spinner {
+  height: 60px;
+  width: 60px;
+  position: relative;
+}
+
+.spinner div {
+  height: 100%;
+  width: 100%;
+  border: 5px solid transparent;
+  border-top-color: #010001;
+  border-radius: 50%;
+  position: absolute;
+  box-sizing: border-box;
+  animation: spinner 1.2s infinite;
+}
+.spinner div:nth-child(2) {
+  border: 5px solid transparent;
+  border-bottom-color: #010001;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+    border-width: 4px;
+  }
+  50% {
+    transform: rotate(180deg);
+    border-width: 1px;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-width: 4px;
+  }
+}
