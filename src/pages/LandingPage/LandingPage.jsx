@@ -5,7 +5,7 @@ import classes from "./LandingPage.module.css";
 const LandingPage = () => {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className={classes.landingPage}>
       <img
         src={headerImage}
         alt=""
