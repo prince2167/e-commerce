@@ -1,6 +1,5 @@
-import { products } from "../data/data";
 export const initialState = {
-  products,
+  products: [],
   wishlist: [],
   cart: [],
   priceInput: "",
@@ -10,11 +9,30 @@ export const initialState = {
   searchTerm: "",
   totalMrp: "",
   totalPrice: "",
+  isLoading: false,
 };
 
 export const productReducer = (state, action) => {
   const { type, payload } = action;
   switch (type) {
+    case "FETCH_PRODUCTS": {
+      return {
+        ...state,
+        products: payload,
+      };
+    }
+    case "ISLOADING_TRUE": {
+      return {
+        ...state,
+        isLoading: true,
+      };
+    }
+    case "ISLOADING_FALSE": {
+      return {
+        ...state,
+        isLoading: false,
+      };
+    }
     case "ADD_TO_WISHLIST": {
       return {
         ...state,
@@ -101,6 +119,16 @@ export const productReducer = (state, action) => {
       return {
         ...state,
         cart: payload,
+      };
+    }
+
+    case "CLEAR_FILTER": {
+      return {
+        ...state,
+        priceInput: initialState.priceInput,
+        categoryFilters: initialState.categoryFilters,
+        rating: initialState.rating,
+        sortBy: initialState.sortBy,
       };
     }
     default:
