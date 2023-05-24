@@ -16,6 +16,37 @@ const CartCard = ({ product }) => {
       payload: { updatedCart, product },
     });
   };
+
+  const decreaseQuantityHandler = (id) => {
+    const updatedCart = cart.map((product) =>
+      product.productId === id
+        ? { ...product, quantity: product.quantity - 1 }
+        : product
+    );
+    dispatch({ type: "DECREASE_CART_PRODUCT_QUANTITY", payload: updatedCart });
+  };
+  const increaseQuantityHandler = (id) => {
+    const updatedCart = cart.map((product) =>
+      product.productId === id
+        ? { ...product, quantity: product.quantity + 1 }
+        : product
+    );
+    dispatch({ type: "DECREASE_CART_PRODUCT_QUANTITY", payload: updatedCart });
+  };
+  const existingProduct = cart.find(
+    (element) => element.productId === product.productId
+  );
+
+  // if (existingProduct) {
+  //   const updatedCart = cart.map((element) =>
+  //     element.productId === product.productId
+  //       ? { ...element, quantity: element.quantity + 1 }
+  //       : element
+  //   );
+  //   dispatch({ type: "EXISTING_PRODUCT", payload: updatedCart });
+  // } else {
+  //   dispatch({ type: "EXISTING_PRODUCT", payload: cart });
+  // }
   return (
     <div className={classes.CartCardContainer}>
       <img src={product?.thumbnail} alt="" />
@@ -28,6 +59,22 @@ const CartCard = ({ product }) => {
             {product?.discountDisplayLabel}
           </p>
         </div>
+
+        <div className={classes.qantityContainer}>
+          <button
+            onClick={() => decreaseQuantityHandler(product?.productId)}
+            disabled={product?.quantity <= 1}
+          >
+            -
+          </button>
+
+          <span className={classes.quantity}>{product?.quantity}</span>
+
+          <button onClick={() => increaseQuantityHandler(product.productId)}>
+            +
+          </button>
+        </div>
+
         <div className={classes.cartButtonGroup}>
           <button
             className={classes.removeCartButton}
