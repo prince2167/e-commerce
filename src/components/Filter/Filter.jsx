@@ -1,9 +1,9 @@
 import { useProducts } from "../../contexts/product-contex";
 import classes from "./Filter.module.css";
-import { category, ratings, sortBy } from "../../data/filterData";
+import { category, ratings, sortingBy } from "../../data/filterData";
 const Filter = () => {
   const { dispatch, state } = useProducts();
-  const { priceInput, categoryFilters } = state;
+  const { priceInput, categoryFilters, rating, sortBy } = state;
 
   const categoryCheckboxHandler = (event) => {
     const category = event.target.value;
@@ -20,11 +20,15 @@ const Filter = () => {
       dispatch({ type: "CATEGORY_FILTERS", payload: updatedCategoryFilters });
     }
   };
+
   return (
     <div className={classes.container}>
       <div className={classes.filterHeader}>
         <p>Filter</p>
-        <button>clear</button>
+
+        <button onClick={() => dispatch({ type: "CLEAR_FILTER" })}>
+          clear
+        </button>
       </div>
 
       <div className={classes.filterByCategory}>
@@ -62,7 +66,7 @@ const Filter = () => {
 
       <div className={classes.filterByPrice}>
         <h2>Sort by</h2>
-        {sortBy.map((sort, index) => (
+        {sortingBy.map((sort, index) => (
           <label key={index} className={classes.sort}>
             <input
               type="radio"
