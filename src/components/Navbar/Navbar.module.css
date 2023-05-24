@@ -1,16 +1,20 @@
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: #fff;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  padding: 0.7rem 3rem;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
   width: 100%;
   overflow: hidden;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0.7rem 3rem;
+  width: 100%;
 }
 
 .navigator {
@@ -35,7 +39,6 @@ nav a {
 .wishlistNavlink,
 .cartNavlink {
   position: relative;
-  /* background-color: red; */
 }
 .wishlistLength,
 .cartLength {
@@ -48,4 +51,37 @@ nav a {
   border-radius: 50%;
   font-size: 14px;
   cursor: pointer;
+}
+
+.responsiveNavbar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0.7rem 1rem;
+}
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 830px) {
+  .navbar {
+    display: none;
+  }
+}
+@media (max-width: 423px) {
+  .navbar {
+    display: none;
+  }
+  .links h1 {
+    font-size: 14px;
+  }
+  /* .navigator button {
+    display: none;
+  } */
+}
+@media (min-width: 830px) {
+  .responsiveNavbar {
+    display: none;
+  }
 }
