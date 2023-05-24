@@ -4,6 +4,7 @@
   margin: auto;
   gap: 30px;
   flex-wrap: wrap;
+  margin-top: 5rem;
 }
 
 .productName {
@@ -64,10 +65,11 @@
 .wishlistButton {
   border: 1px solid #5c6975;
   background-color: #fff;
-  padding: 10px 20px;
+  padding: 10px 80px;
   display: flex;
   align-items: center;
   gap: 6px;
+  text-align: center;
 }
 
 .cartButton {
@@ -75,4 +77,26 @@
   color: white;
   border: none;
   padding: 10px 80px;
+}
+
+@media (max-width: 480px) {
+  .productDetailsConatiner img {
+    width: 250px;
+  }
+  .productDetails {
+    text-align: center;
+  }
+  .priceDetails {
+    justify-content: center;
+  }
+  .buttonGroup {
+    flex-direction: column;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 830px) {
+  .productDetailsConatiner {
+    margin-top: 7rem;
+  }
 }
