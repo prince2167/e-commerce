@@ -2,9 +2,11 @@ import { RiHeartAddLine, BsFillHeartFill } from "../../assets/icon";
 import classes from "./WishlistCard.module.css";
 import { useProducts } from "../../contexts/product-contex";
 import { getIsInProducts } from "../../utils";
+import { useNavigate } from "react-router-dom";
 const WishlistCard = ({ product }) => {
   const { dispatch, state, removeWishlistHandler } = useProducts();
-  const { wishlist, cart, products } = state;
+  const { wishlist } = state;
+  const navigate = useNavigate();
   const {
     productName,
     price,
