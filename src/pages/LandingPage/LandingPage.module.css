@@ -8,3 +8,9 @@
   padding: 0 1rem;
   cursor: pointer;
 }
+
+@media (max-width: 830px) {
+  .landingPage{
+    margin-top: 7rem;
+  }
+}
