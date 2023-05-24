@@ -131,3 +131,18 @@
 .sort input {
   cursor: pointer;
 }
+
+@media (max-width: 522px) {
+  .container {
+    display: none;
+    gap: 5rem;
+    position: static;
+  }
+  .filterHeader {
+    display: none;
+  }
+
+  .filterByPrice {
+    display: none;
+  }
+}
