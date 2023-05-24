@@ -143,3 +143,9 @@
     opacity: 0;
   }
 }
+
+@media (max-width: 830px) {
+  .formContainer {
+    margin-top: 5rem;
+  }
+}
