@@ -15,6 +15,12 @@
   /* background-color: red;  */
 }
 
+
+@media (max-width: 830px) {
+  .homePage{
+    margin-top: 7rem;
+  }
+}
 @media (max-width: 522px) {
   /* .homePage{
     flex-direction: column;
