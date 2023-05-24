@@ -1,7 +1,6 @@
 .CartCardContainer {
   display: flex;
   gap: 20px;
-  background-color: red;
   max-width: 360px;
 }
 
