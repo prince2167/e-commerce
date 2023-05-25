@@ -3,7 +3,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
 import { RiHeartAddLine } from "react-icons/ri";
 import { BsFillHeartFill } from "react-icons/bs";
-import { RiAccountCircleLine } from "react-icons/ri";
+import { RiAccountCircleLine, RiAccountCircleFill } from "react-icons/ri";
 
 export {
   CiSearch,
@@ -12,4 +12,5 @@ export {
   RiHeartAddLine,
   BsFillHeartFill,
   RiAccountCircleLine,
+  RiAccountCircleFill,
 };
