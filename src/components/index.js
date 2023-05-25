@@ -5,7 +5,8 @@ import ProductCard from "./ProductCard/ProductCard";
 import WishlistCard from "./WishlistCard/WishlistCard";
 import CartCard from "./CartCard/CartCard";
 import Loader from "./Loader/Loader";
-
+import Footer from "./Footer/Footer";
+import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 export {
   Navbar,
   Filter,
@@ -14,4 +15,6 @@ export {
   WishlistCard,
   CartCard,
   Loader,
+  Footer,
+  ProtectedRoute,
 };
