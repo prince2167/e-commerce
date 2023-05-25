@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Navbar } from "./components/index";
+import { Navbar, ProtectedRoute } from "./components/index";
 import {
   Cart,
   Home,
@@ -17,8 +17,24 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/wishlist" element={<Wishlist />} />
+
+        <Route
+          path="/cart"
+          element={
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          }
+        />
+        
+        <Route
+          path="/wishlist"
+          element={
+            <ProtectedRoute>
+              <Wishlist />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/productDetails/:productId" element={<ProductDetails />} />
