@@ -4,8 +4,15 @@ import axios from "axios";
 import { url } from "../api/products";
 const ProductContext = createContext();
 
+const storedData = (initialState) =>
+  JSON.parse(localStorage.getItem("state")) || initialState;
+
 const ProductProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(productReducer, initialState);
+  const [state, dispatch] = useReducer(
+    productReducer,
+    initialState,
+    storedData
+  );
 
   const removeWishlistHandler = (id) => {
     const updatedWishlist = state.wishlist.filter(
@@ -13,6 +20,11 @@ const ProductProvider = ({ children }) => {
     );
     dispatch({ type: "REMOVE_FROM_WISHLIST", payload: updatedWishlist });
   };
+
+  // local storage
+  useEffect(() => {
+    localStorage.setItem("state", JSON.stringify(state));
+  }, [state]);
 
   const fetchData = async () => {
     try {
