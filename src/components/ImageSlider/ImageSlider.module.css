@@ -1,0 +1,28 @@
+.images {
+  position: relative;
+}
+
+.leftArrow {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  cursor: pointer;
+}
+.disabledLeftArrow {
+  display: none;
+}
+.rigthArrow {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  cursor: pointer;
+}
+.disableRigthArrow {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .images img {
+    width: 250px;
+  }
+}
