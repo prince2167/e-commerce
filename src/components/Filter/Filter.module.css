@@ -1,5 +1,4 @@
 .container {
-  /* background-color: green; */
   padding: 15px;
   position: fixed;
   max-width: 15rem;
@@ -10,7 +9,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   border-bottom: 1px solid #5c6975;
   padding-bottom: 15px;
 }
@@ -25,6 +23,28 @@
   cursor: pointer;
   background-color: #fff;
 }
+
+/* filter By Category */
+
+.filterByCategory {
+  margin: 25px 0;
+}
+.filterByCategory h2 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.category {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin: 3px 0;
+  cursor: pointer;
+}
+.category input {
+  cursor: pointer;
+}
+
 /* Filter by price */
 .filterByPrice {
   margin: 15px 0;
@@ -72,44 +92,8 @@
   border: 1px solid black;
 }
 
-/* filter By Category */
 
-.filterByCategory {
-  margin: 25px 0;
-}
-.filterByCategory h2 {
-  font-size: 18px;
-  margin-bottom: 6px;
-}
 
-.category {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  margin: 3px 0;
-  cursor: pointer;
-}
-.category input {
-  cursor: pointer;
-}
-
-/* filter By Rating */
-
-.filterByRating h2 {
-  font-size: 18px;
-}
-
-.rating {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  cursor: pointer;
-  margin: 5px 0;
-  font-size: 17px;
-}
-.rating input {
-  cursor: pointer;
-}
 /* filter By Price */
 
 .filterByPrice h2 {
