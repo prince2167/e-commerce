@@ -10,6 +10,7 @@ export const initialState = {
   totalMrp: "",
   totalPrice: "",
   isLoading: false,
+  currentIndex: 0,
 };
 
 export const productReducer = (state, action) => {
@@ -90,6 +91,7 @@ export const productReducer = (state, action) => {
         rating: payload,
       };
     }
+
     case "SORT_BY": {
       return {
         ...state,
@@ -122,6 +124,19 @@ export const productReducer = (state, action) => {
       };
     }
 
+    case "PREVIOUS_CURRENT_INDEX": {
+      return {
+        ...state,
+        currentIndex: state.currentIndex - 1,
+      };
+    }
+    case "NEXT_CURRENT_INDEX": {
+      return {
+        ...state,
+        currentIndex: state.currentIndex + 1,
+      };
+    }
+
     case "CLEAR_FILTER": {
       return {
         ...state,
@@ -131,7 +146,8 @@ export const productReducer = (state, action) => {
         sortBy: initialState.sortBy,
       };
     }
+
     default:
-      break;
+      return { ...state };
   }
 };
