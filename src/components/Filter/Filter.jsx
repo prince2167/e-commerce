@@ -1,6 +1,6 @@
 import { useProducts } from "../../contexts/product-contex";
 import classes from "./Filter.module.css";
-import { category, ratings, sortingBy } from "../../data/filterData";
+import { category, ratingsBy, sortingBy } from "../../data/filterData";
 const Filter = () => {
   const { dispatch, state } = useProducts();
   const { priceInput, categoryFilters, rating, sortBy } = state;
@@ -47,19 +47,21 @@ const Filter = () => {
         ))}
       </div>
 
-      <div className={classes.filterByRating}>
+      <div className={classes.filterByPrice}>
         <h2>Ratings</h2>
-        {ratings.map((rating, index) => (
-          <label key={index} className={classes.rating}>
+        {ratingsBy.map((rate, index) => (
+          <label key={index} className={classes.sort}>
             <input
               type="radio"
-              name="rating"
-              value={rating}
+              name="rate"
+              value={rate}
+              checked={rate === rating}
               onChange={(event) =>
                 dispatch({ type: "RATING", payload: event.target.value })
               }
             />
-            <p>{rating} star & above</p>
+
+            <p>{rate} star & above</p>
           </label>
         ))}
       </div>
@@ -72,6 +74,7 @@ const Filter = () => {
               type="radio"
               name="sort"
               value={sort}
+              checked={sort === sortBy}
               onChange={(event) =>
                 dispatch({ type: "SORT_BY", payload: event.target.value })
               }
@@ -80,6 +83,7 @@ const Filter = () => {
           </label>
         ))}
       </div>
+
       <div className={classes.filterByPrice}>
         <h2>Price</h2>
         <p>{priceInput}</p>
