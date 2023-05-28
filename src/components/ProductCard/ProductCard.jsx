@@ -3,8 +3,12 @@ import { RiHeartAddLine, BsFillHeartFill } from "../../assets/icon";
 import classes from "./ProductCard.module.css";
 import { useProducts } from "../../contexts/product-contex";
 import { getIsInProducts } from "../../utils";
+import { useAuth } from "../../contexts/auth-context";
+import { auth } from "../../config";
 const ProductsCard = ({ product }) => {
   const navigate = useNavigate();
+  const { authState } = useAuth();
+  const { user } = authState;
   const { dispatch, state, removeWishlistHandler } = useProducts();
   const { wishlist } = state;
   const {
@@ -51,7 +55,9 @@ const ProductsCard = ({ product }) => {
         ) : (
           <button
             onClick={() =>
-              dispatch({ type: "ADD_TO_WISHLIST", payload: product })
+              user
+                ? dispatch({ type: "ADD_TO_WISHLIST", payload: product })
+                : navigate("/login")
             }
           >
             <RiHeartAddLine size="18" />
