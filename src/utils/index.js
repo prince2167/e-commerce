@@ -35,7 +35,7 @@ export const getSortedProductsBySlider = (products, value) => {
 
 export const getSearchProducts = (products, value) => {
   const updatedProducts = products.filter((product) =>
-    product.productName.toLowerCase().includes(value)
+    product.productName.toLowerCase().includes(value.toLowerCase())
   );
   return updatedProducts;
 };
