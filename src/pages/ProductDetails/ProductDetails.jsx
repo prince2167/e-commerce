@@ -1,11 +1,16 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useProducts } from "../../contexts/product-contex";
+import { useAuth } from "../../contexts/auth-context";
 import { RiHeartAddLine, BsFillHeartFill } from "../../assets/icon";
 import classes from "./ProductDetails.module.css";
 import { getIsInProducts } from "../../utils";
+import { ImageSlider } from "../../components/index";
 
 const ProductDetails = () => {
   const { productId } = useParams();
+  const {
+    authState: { user },
+  } = useAuth();
   const { state, dispatch, removeWishlistHandler } = useProducts();
   const { products, wishlist, cart } = state;
   const product = products.find(
@@ -15,10 +20,12 @@ const ProductDetails = () => {
   const isInWishlist = getIsInProducts(wishlist, productId);
   const isInCart = getIsInProducts(cart, productId);
   const navigate = useNavigate();
+
   return (
     <div className={classes.productDetailsConatiner}>
       <>
-        <img src={product?.thumbnail} alt="" />
+        <ImageSlider images={product?.images} />
+        {/* <img src={product?.images[3].url} alt="" /> */}
       </>
       <div className={classes.productDetails}>
         <h3>{product?.brand}</h3>
@@ -48,13 +55,16 @@ const ProductDetails = () => {
             <button
               className={classes.wishlistButton}
               onClick={() =>
-                dispatch({ type: "ADD_TO_WISHLIST", payload: product })
+                user
+                  ? dispatch({ type: "ADD_TO_WISHLIST", payload: product })
+                  : navigate("/login")
               }
             >
               <RiHeartAddLine />
               <p>Add to Wishlist</p>
             </button>
           )}
+
           {isInCart ? (
             <button
               className={classes.cartButton}
@@ -66,7 +76,9 @@ const ProductDetails = () => {
             <button
               className={classes.cartButton}
               onClick={() =>
-                dispatch({ type: "ADD_TO_CART", payload: product })
+                user
+                  ? dispatch({ type: "ADD_TO_CART", payload: product })
+                  : navigate("/login")
               }
             >
               Add to Cart
