@@ -106,7 +106,7 @@
   outline: none;
   background-color: #010001;
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px 0 5px 0;
   border-radius: 3px;
   color: #fff;
   font-size: 16px;
@@ -114,10 +114,18 @@
   cursor: pointer;
 }
 
+.googleButton {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  border: none;
+  margin-bottom: 10px;
+}
+
 .signin {
   text-align: center;
 }
-
 
 .signin a:hover {
   text-decoration: none #010001;
@@ -130,6 +138,10 @@
 
 .submit:hover {
   background-color: #010001;
+}
+
+.errorAlert{
+  color: red;
 }
 
 @keyframes pulse {
