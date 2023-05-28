@@ -29,7 +29,7 @@
 }
 
 .inputContainer input,
-.form button {
+.submit {
   outline: none;
   border: 1px solid rgba(105, 105, 105, 0.397);
   margin: 8px 0;
@@ -49,7 +49,7 @@
   padding: 12px 15px;
   background-color: #010001;
   color: #ffffff;
-  font-size: 0.875rem;
+  font-size: 16px;
   line-height: 1.25rem;
   font-weight: 500;
   width: 100%;
@@ -69,4 +69,17 @@
   text-decoration: none;
   font-weight: bolder;
   color: #fc7684;
+}
+
+.errorAlert {
+  color: red;
+  text-align: center;
+}
+.googleButton {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  border: none;
+  margin: 10px 0 15px 0;
 }
