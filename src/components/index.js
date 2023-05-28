@@ -6,6 +6,7 @@ import WishlistCard from "./WishlistCard/WishlistCard";
 import CartCard from "./CartCard/CartCard";
 import Loader from "./Loader/Loader";
 import Footer from "./Footer/Footer";
+import ImageSlider from "./ImageSlider/ImageSlider";
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 export {
   Navbar,
@@ -16,5 +17,6 @@ export {
   CartCard,
   Loader,
   Footer,
+  ImageSlider,
   ProtectedRoute,
 };
