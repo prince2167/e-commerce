@@ -79,10 +79,8 @@
   padding: 10px 80px;
 }
 
-@media (max-width: 480px) {
-  .productDetailsConatiner img {
-    width: 250px;
-  }
+@media (max-width: 630px) {
+ 
   .productDetails {
     text-align: center;
   }
