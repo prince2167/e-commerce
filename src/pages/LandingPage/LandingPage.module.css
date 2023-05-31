@@ -1,18 +1,150 @@
 .landingPage {
   margin-top: 5rem;
-}
-.main {
   height: 100vh;
 }
-.headerImage {
+
+.headerImage img {
   min-width: 320px;
   width: 100%;
-  padding: 0 1rem;
   cursor: pointer;
 }
 
+.categoryDescription {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.categoryDescription h1,
+.sale h1 {
+  font-family: Georgia, "Garamond", Times, serif;
+  font-size: 40px;
+}
+.categoryDescription p,
+.sale p {
+  font-size: 20px;
+  font-family: Georgia, "Garamond", Times, serif;
+  font-style: italic;
+  color: #607092;
+}
+
+.categoryImages {
+  margin: 1rem 0 2rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.mens,
+.womens,
+.kids {
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.mens:hover,
+.womens:hover,
+.kids:hover {
+  transform: scale(1.02);
+}
+
+.mens img {
+  max-width: 650px;
+  width: 650px;
+  height: 520px;
+  object-fit: cover;
+}
+
+.mensShopButton,
+.womensShopButton,
+.kidsShopButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 50%;
+  left: 50%;
+  bottom: 3%;
+}
+
+.womensShopButton,
+.kidsShopButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 50%;
+  left: 50%;
+  bottom: 7%;
+}
+
+.mensShopButton h1,
+.womensShopButton h1,
+.kidsShopButton h1 {
+  font-family: Georgia, "Garamond", Times, serif;
+  color: white;
+  margin: 5px 0;
+}
+
+.mensShopButton button,
+.womensShopButton button,
+.kidsShopButton button {
+  font-family: Georgia, "Garamond", Times, serif;
+  width: 150px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5rem;
+  border: none;
+  cursor: pointer;
+}
+.mensShopButton button:hover,
+.womensShopButton button:hover,
+.kidsShopButton button:hover {
+  background-color: #131933;
+  color: white;
+}
+
+.leftImages {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.leftImages img {
+  max-width: 650px;
+  width: 650px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.sale {
+  text-align: center;
+}
+.salesImage {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 0.5rem 0 3rem 0;
+}
+.salesImage img {
+  width: 430px;
+  height: 160px;
+  cursor: pointer;
+}
 @media (max-width: 830px) {
   .landingPage {
     margin-top: 7rem;
+  }
+}
+
+@media (max-width: 695px) {
+  .mens img {
+    height: 180px;
+  }
+  .leftImages img {
+    height: 180px;
   }
 }
