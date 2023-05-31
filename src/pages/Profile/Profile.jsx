@@ -4,7 +4,7 @@ import { userImage } from "../../assets/images";
 const Profile = () => {
   const { authState, logout } = useAuth();
   const { user } = authState;
-
+  console.log(user);
   const handleLogout = async () => {
     try {
       await logout();
@@ -17,14 +17,18 @@ const Profile = () => {
     <div className={classes.profilePage}>
       <div className={classes.profileCard}>
         <h1>User Profile</h1>
-        <img src={userImage} alt="" className={classes.userImage} />
+        {user?.displayName ? (
+          <img src={user?.photoURL} alt="" />
+        ) : (
+          <img src={userImage} alt="" className={classes.userImage} />
+        )}
         {user?.displayName && (
           <p>
             <strong>Name: </strong>
             {user.displayName}
           </p>
         )}
-        
+
         {user?.displayName && (
           <p>
             <strong>Email: </strong>
