@@ -8,6 +8,7 @@ const Cart = () => {
   const { state, dispatch } = useProducts();
   const { cart, totalPrice, totalMrp } = state;
   const navigate = useNavigate();
+
   useEffect(() => {
     const updatedTotalPrice = cart?.reduce(
       (acc, curr) => acc + curr.price * curr.quantity,
@@ -61,6 +62,13 @@ const Cart = () => {
             <h2 className={classes.totalAmount}>
               Total Amount:<span>₹{totalPrice}</span>{" "}
             </h2>
+
+            <button
+              className={classes.checkoutButton}
+              onClick={() => navigate("/checkout")}
+            >
+              Checkout
+            </button>
           </div>
         )}
       </div>
