@@ -3,7 +3,7 @@
   justify-content: center;
   margin-top: 5rem;
 }
-.xyz {
+.filterContainer {
   width: 15rem;
 }
 .cardList {
@@ -12,25 +12,29 @@
   gap: 25px;
   flex-wrap: wrap;
   width: calc(100% - 15rem);
-  /* background-color: red;  */
 }
 
-
 @media (max-width: 830px) {
-  .homePage{
+  .homePage {
     margin-top: 7rem;
   }
 }
 @media (max-width: 522px) {
-  /* .homePage{
+  .homePage {
     flex-direction: column;
-    
-  }  */
-  .xyz{
-    display: none
+    gap: 2rem;
+  }
+  .filterContainer {
+    display: none;
   }
   .cardList {
     align-items: center;
     width: 100vw;
+  }
+}
+
+@media (min-width: 522px) {
+  .responsiveFilterContainer {
+    display: none;
   }
 }
