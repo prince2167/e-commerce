@@ -6,4 +6,7 @@ const emptyWishlist =
 
 const emptyCart =
   "https://asset.nykaafashion.com/static/assets/empty-cart.37b1b704.png";
-export { headerImage, emptyWishlist, emptyCart };
+
+const userImage =
+  "https://res.cloudinary.com/dptfwcnro/image/upload/v1685077996/E-comm%20ATTIREX/avtar/pngtree-beard-family-girl-playing-avatar-image_1138008_f8w31f.jpg";
+export { headerImage, emptyWishlist, emptyCart, userImage };
