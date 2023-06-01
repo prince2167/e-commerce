@@ -1,5 +1,6 @@
 import Navbar from "./Navbar/Navbar";
 import Filter from "./Filter/Filter";
+import ResponsiveFilter from "./ResponsiveFilter/ResponsiveFilter";
 import Searchbar from "./Searchbar/Searchbar";
 import ProductCard from "./ProductCard/ProductCard";
 import WishlistCard from "./WishlistCard/WishlistCard";
@@ -19,4 +20,5 @@ export {
   Footer,
   ImageSlider,
   ProtectedRoute,
+  ResponsiveFilter,
 };
