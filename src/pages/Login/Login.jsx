@@ -11,7 +11,7 @@ const Login = () => {
     authDispatch({ type: "CLEAR_ERROR" });
     try {
       await login(email, password);
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       authDispatch({ type: "ERROR", payload: error.message });
     }
@@ -21,7 +21,7 @@ const Login = () => {
     event.preventDefault();
     try {
       await googleSignin();
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       authDispatch({ type: "ERROR", payload: error.message });
     }
