@@ -8,6 +8,8 @@ import {
   ProductDetails,
   SignUp,
   Login,
+  Profile,
+  Checkout,
 } from "./pages";
 
 function App() {
@@ -26,7 +28,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-        
+
         <Route
           path="/wishlist"
           element={
@@ -35,8 +37,17 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/productDetails/:productId" element={<ProductDetails />} />
       </Routes>
     </>
