@@ -92,8 +92,6 @@
   border: 1px solid black;
 }
 
-
-
 /* filter By Price */
 
 .filterByPrice h2 {
@@ -118,15 +116,6 @@
 
 @media (max-width: 522px) {
   .container {
-    display: none;
-    gap: 5rem;
-    position: static;
-  }
-  .filterHeader {
-    display: none;
-  }
-
-  .filterByPrice {
     display: none;
   }
 }
