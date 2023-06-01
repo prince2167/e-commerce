@@ -11,6 +11,9 @@ export const initialState = {
   totalPrice: "",
   isLoading: false,
   currentIndex: 0,
+  isFilter: false,
+  isSortBy: false,
+  selectedAddress: [],
 };
 
 export const productReducer = (state, action) => {
@@ -144,6 +147,24 @@ export const productReducer = (state, action) => {
         categoryFilters: initialState.categoryFilters,
         rating: initialState.rating,
         sortBy: initialState.sortBy,
+      };
+    }
+    case "IS_SORTBY": {
+      return {
+        ...state,
+        isSortBy: !state.isSortBy,
+      };
+    }
+    case "IS_FILTER": {
+      return {
+        ...state,
+        isFilter: !state.isFilter,
+      };
+    }
+    case "SELECT_ADDRESS": {
+      return {
+        ...state,
+        selectedAddress: [payload],
       };
     }
 
