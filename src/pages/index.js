@@ -5,5 +5,16 @@ import LandingPage from "./LandingPage/LandingPage";
 import ProductDetails from "./ProductDetails/ProductDetails";
 import SignUp from "./SignUp/SignUp";
 import Login from "./Login/Login";
-
-export { Home, Cart, Wishlist, LandingPage, ProductDetails, SignUp, Login };
+import Profile from "./Profile/Profile";
+import Checkout from "./Checkout/Checkout";
+export {
+  Home,
+  Cart,
+  Wishlist,
+  LandingPage,
+  ProductDetails,
+  SignUp,
+  Login,
+  Profile,
+  Checkout,
+};
