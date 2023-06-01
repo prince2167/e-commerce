@@ -22,7 +22,7 @@ const SignUp = () => {
     try {
       if (password === confirmPassword) {
         await googleSignin();
-        navigate("/home");
+        navigate("/");
       } else {
         alert("Password does not match");
       }
