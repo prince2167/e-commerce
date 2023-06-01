@@ -54,7 +54,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 300px;
-  height: 200px;
+  height: 240px;
   padding: 15px 0;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -87,10 +87,26 @@
 }
 
 .totalAmount {
+  margin-top: 10px;
   padding: 0 15px;
   font-size: 18px;
   display: flex;
   justify-content: space-between;
+}
+
+.checkoutButton {
+  margin: 20px 10px;
+  padding: 10px;
+  background-color: #fc7684;
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.checkoutButton:hover {
+  background-color: #f98d98;
 }
 
 @media (mac-width: 820px) {
@@ -100,7 +116,7 @@
 }
 
 @media (max-width: 830px) {
-  .cartpage{
+  .cartpage {
     margin-top: 7rem;
   }
 }
