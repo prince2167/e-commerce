@@ -13,8 +13,8 @@
   padding: 20px;
   border-radius: 10px;
   position: relative;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 3px;
 }
 
 .title {
@@ -140,7 +140,7 @@
   background-color: #010001;
 }
 
-.errorAlert{
+.errorAlert {
   color: red;
 }
 
