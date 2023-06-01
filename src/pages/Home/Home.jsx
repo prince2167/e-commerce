@@ -1,5 +1,10 @@
 import { useProducts } from "../../contexts/product-contex";
-import { Filter, ProductCard, Loader } from "../../components/index";
+import {
+  Filter,
+  ProductCard,
+  Loader,
+  ResponsiveFilter,
+} from "../../components/index";
 import classes from "./Home.module.css";
 import {
   getFilteredByRating,
@@ -38,14 +43,20 @@ const Home = () => {
   if (isLoading) return <Loader />;
   return (
     <div className={classes.homePage}>
-      <div className={classes.xyz}>
+      <div className={classes.filterContainer}>
         <Filter />
+      </div>
+
+      <div className={classes.responsiveFilterContainer}>
+        <ResponsiveFilter />
       </div>
 
       <div className={classes.cardList}>
         {searchedProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
+
+        {searchedProducts.length === 0 && <h1>Product does not found...</h1>}
       </div>
     </div>
   );
