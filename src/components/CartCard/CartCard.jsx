@@ -1,12 +1,15 @@
 import { useProducts } from "../../contexts/product-contex";
 import classes from "./CartCard.module.css";
+import { toast } from "react-toastify";
 
 const CartCard = ({ product }) => {
   const { state, dispatch } = useProducts();
   const { cart } = state;
+
   const removefromCartHandler = (id) => {
     const updatedCart = cart.filter((product) => product.productId !== id);
     dispatch({ type: "REMOVE_FROM_CART", payload: updatedCart });
+    toast.success("Remove from cart");
   };
   const moveWishlistHandler = (id) => {
     const updatedCart = cart.filter((product) => product.productId !== id);
@@ -15,6 +18,8 @@ const CartCard = ({ product }) => {
       type: "MOVE_TO_WISHLIST_FROM_CART",
       payload: { updatedCart, product },
     });
+
+    toast.success("Move to wishlist");
   };
 
   const decreaseQuantityHandler = (id) => {
@@ -24,6 +29,7 @@ const CartCard = ({ product }) => {
         : product
     );
     dispatch({ type: "DECREASE_CART_PRODUCT_QUANTITY", payload: updatedCart });
+    toast.success("Quantity decrease");
   };
   const increaseQuantityHandler = (id) => {
     const updatedCart = cart.map((product) =>
@@ -32,7 +38,9 @@ const CartCard = ({ product }) => {
         : product
     );
     dispatch({ type: "DECREASE_CART_PRODUCT_QUANTITY", payload: updatedCart });
+    toast.success("Quantity increase");
   };
+
   const existingProduct = cart.find(
     (element) => element.productId === product.productId
   );
