@@ -2,6 +2,8 @@ import GoogleButton from "react-google-button";
 import classes from "./SignUp.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/auth-context";
+import { toast } from "react-toastify";
+
 const SignUp = () => {
   const { authDispatch, authState, signUp, googleSignin } = useAuth();
   const { email, password, error, confirmPassword } = authState;
@@ -11,8 +13,10 @@ const SignUp = () => {
     try {
       await signUp(email, password);
       navigate("/login");
+      toast.success("Signup successful");
     } catch (error) {
       authDispatch({ type: "ERROR", payload: error.message });
+      toast.error("Something wrong");
     }
   };
 
@@ -23,8 +27,10 @@ const SignUp = () => {
       if (password === confirmPassword) {
         await googleSignin();
         navigate("/");
+        toast.success("Login successful");
       } else {
         alert("Password does not match");
+        toast.warning("Password does not match");
       }
     } catch (error) {
       authDispatch({ type: "ERROR", payload: error.message });
