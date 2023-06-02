@@ -3,6 +3,8 @@ import classes from "./WishlistCard.module.css";
 import { useProducts } from "../../contexts/product-contex";
 import { getIsInProducts } from "../../utils";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 const WishlistCard = ({ product }) => {
   const { dispatch, state, removeWishlistHandler } = useProducts();
   const { wishlist } = state;
@@ -26,6 +28,7 @@ const WishlistCard = ({ product }) => {
       type: "ADD_TO_CART_FROM_WISHLIST",
       payload: { product, updatedWishlist },
     });
+    toast.success("Add to cart");
   };
   const isInWishlist = getIsInProducts(wishlist, productId);
 
