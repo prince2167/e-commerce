@@ -2,18 +2,23 @@ import classes from "./Login.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import GoogleButton from "react-google-button";
 import { useAuth } from "../../contexts/auth-context";
+import { toast } from "react-toastify";
+
 const Login = () => {
   const { authDispatch, authState, login, googleSignin } = useAuth();
   const { email, password, error } = authState;
   const navigate = useNavigate();
+
   const loginHandler = async (event) => {
     event.preventDefault();
     authDispatch({ type: "CLEAR_ERROR" });
     try {
       await login(email, password);
       navigate("/");
+      toast.success("Login successful!!");
     } catch (error) {
       authDispatch({ type: "ERROR", payload: error.message });
+      toast.error("User does not exist! Please singup");
     }
   };
 
@@ -21,9 +26,11 @@ const Login = () => {
     event.preventDefault();
     try {
       await googleSignin();
+      toast.success("Login successful");
       navigate("/");
     } catch (error) {
       authDispatch({ type: "ERROR", payload: error.message });
+      toast.error(error.message);
     }
   };
   return (
