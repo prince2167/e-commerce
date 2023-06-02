@@ -1,6 +1,8 @@
 import { useAuth } from "../../contexts/auth-context";
 import classes from "./Profile.module.css";
 import { userImage } from "../../assets/images";
+import { toast } from "react-toastify";
+
 const Profile = () => {
   const { authState, logout } = useAuth();
   const { user } = authState;
@@ -12,6 +14,7 @@ const Profile = () => {
     } catch (error) {
       console.log(error.message);
     }
+    toast.success("Logout successfully");
   };
   return (
     <div className={classes.profilePage}>
