@@ -11,7 +11,12 @@ const ProductDetails = () => {
   const {
     authState: { user },
   } = useAuth();
-  const { state, dispatch, removeWishlistHandler } = useProducts();
+  const {
+    state,
+    removeWishlistHandler,
+    addToWishlistHandler,
+    addToCartHandler,
+  } = useProducts();
   const { products, wishlist, cart } = state;
   const product = products.find(
     (product) => product.productId === Number(productId)
@@ -25,7 +30,6 @@ const ProductDetails = () => {
     <div className={classes.productDetailsConatiner}>
       <>
         <ImageSlider images={product?.images} />
-        {/* <img src={product?.images[3].url} alt="" /> */}
       </>
       <div className={classes.productDetails}>
         <h3>{product?.brand}</h3>
@@ -54,11 +58,7 @@ const ProductDetails = () => {
           ) : (
             <button
               className={classes.wishlistButton}
-              onClick={() =>
-                user
-                  ? dispatch({ type: "ADD_TO_WISHLIST", payload: product })
-                  : navigate("/login")
-              }
+              onClick={() => addToWishlistHandler(product)}
             >
               <RiHeartAddLine />
               <p>Add to Wishlist</p>
@@ -75,11 +75,7 @@ const ProductDetails = () => {
           ) : (
             <button
               className={classes.cartButton}
-              onClick={() =>
-                user
-                  ? dispatch({ type: "ADD_TO_CART", payload: product })
-                  : navigate("/login")
-              }
+              onClick={() => addToCartHandler(product)}
             >
               Add to Cart
             </button>
