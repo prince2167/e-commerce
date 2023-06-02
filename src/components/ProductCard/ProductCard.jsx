@@ -4,12 +4,12 @@ import classes from "./ProductCard.module.css";
 import { useProducts } from "../../contexts/product-contex";
 import { getIsInProducts } from "../../utils";
 import { useAuth } from "../../contexts/auth-context";
-import { auth } from "../../config";
+
 const ProductsCard = ({ product }) => {
   const navigate = useNavigate();
   const { authState } = useAuth();
   const { user } = authState;
-  const { dispatch, state, removeWishlistHandler } = useProducts();
+  const { state, removeWishlistHandler, addToWishlistHandler } = useProducts();
   const { wishlist } = state;
   const {
     productName,
@@ -53,13 +53,7 @@ const ProductsCard = ({ product }) => {
             <BsFillHeartFill size="18" />
           </button>
         ) : (
-          <button
-            onClick={() =>
-              user
-                ? dispatch({ type: "ADD_TO_WISHLIST", payload: product })
-                : navigate("/login")
-            }
-          >
+          <button onClick={() => addToWishlistHandler(product)}>
             <RiHeartAddLine size="18" />
           </button>
         )}
