@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 const WishlistCard = ({ product }) => {
   const { dispatch, state, removeWishlistHandler } = useProducts();
-  const { wishlist } = state;
+  const { wishlist, cart } = state;
   const navigate = useNavigate();
   const {
     productName,
@@ -31,6 +31,9 @@ const WishlistCard = ({ product }) => {
     toast.success("Add to cart");
   };
   const isInWishlist = getIsInProducts(wishlist, productId);
+  const isInCart = cart.some(
+    (product) => product.productId === Number(productId)
+  );
 
   return (
     <div className={classes.productCard}>
@@ -53,12 +56,21 @@ const WishlistCard = ({ product }) => {
         </div>
       </div>
 
-      <button
-        className={classes.cartButton}
-        onClick={() => cartHandler(productId)}
-      >
-        Add to Cart
-      </button>
+      {isInCart ? (
+        <button
+          className={classes.cartButton}
+          onClick={() => navigate("/cart")}
+        >
+          Go to cart
+        </button>
+      ) : (
+        <button
+          className={classes.cartButton}
+          onClick={() => cartHandler(productId)}
+        >
+          Add to Cart
+        </button>
+      )}
 
       <div className={classes.wishlistButton}>
         {isInWishlist ? (
