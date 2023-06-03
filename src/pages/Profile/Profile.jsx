@@ -2,11 +2,12 @@ import { useAuth } from "../../contexts/auth-context";
 import classes from "./Profile.module.css";
 import { userImage } from "../../assets/images";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
 
 const Profile = () => {
   const { authState, logout } = useAuth();
   const { user } = authState;
-
+  const navigate = useNavigate();
   const handleLogout = async () => {
     try {
       await logout();
