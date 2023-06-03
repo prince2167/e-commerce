@@ -109,11 +109,7 @@
   background-color: #f98d98;
 }
 
-@media (mac-width: 820px) {
-  .cartpage {
-    gap: 3rem;
-  }
-}
+
 
 @media (max-width: 830px) {
   .cartpage {
