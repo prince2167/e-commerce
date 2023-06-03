@@ -1,10 +1,5 @@
 import { useProducts } from "../../contexts/product-contex";
-import {
-  Filter,
-  ProductCard,
-  Loader,
-  ResponsiveFilter,
-} from "../../components/index";
+import { Filter, ProductCard, Loader } from "../../components/index";
 import classes from "./Home.module.css";
 import {
   getFilteredByRating,
@@ -13,8 +8,11 @@ import {
   getSortedByPrice,
   getSortedProductsBySlider,
 } from "../../utils";
+import { useState } from "react";
 const Home = () => {
-  const { state } = useProducts();
+  const [showFilter, setShowFilter] = useState(false);
+  const { state, dispatch } = useProducts();
+
   const {
     products,
     categoryFilters,
@@ -24,6 +22,11 @@ const Home = () => {
     searchTerm,
     isLoading,
   } = state;
+
+  const clearFilterHandler = () => {
+    dispatch({ type: "CLEAR_FILTER" });
+    setShowFilter(false);
+  };
 
   const filteredProducts = getFilteredProducts(products, categoryFilters);
   const filteredByRatingProducts = getFilteredByRating(
@@ -42,23 +45,23 @@ const Home = () => {
 
   if (isLoading) return <Loader />;
   return (
-    <div className={classes.homePage}>
-      <div className={classes.filterContainer}>
-        <Filter />
-      </div>
+    <>
+      <div className={classes.homePage}>
+        <Filter showFilter={showFilter} setShowFilter={setShowFilter} />
 
-      <div className={classes.responsiveFilterContainer}>
-        <ResponsiveFilter />
-      </div>
+        <div className={classes.cardList}>
+          {searchedProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
 
-      <div className={classes.cardList}>
-        {searchedProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-
-        {searchedProducts.length === 0 && <h1>Product does not found...</h1>}
+          {searchedProducts.length === 0 && <h1>Product does not found...</h1>}
+        </div>
       </div>
-    </div>
+      <div className={classes.bottomBar}>
+        <button onClick={() => setShowFilter(true)}>Filters</button>
+        <button onClick={clearFilterHandler}>clear</button>
+      </div>
+    </>
   );
 };
 
