@@ -4,7 +4,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 99;
   width: 100%;
   overflow: hidden;
 }
@@ -69,15 +69,12 @@ nav a {
   }
 }
 @media (max-width: 423px) {
-  .navbar {
-    display: none;
+  .navigator {
+    gap: 1rem;
   }
   .links h1 {
-    font-size: 14px;
+    font-size: 20px;
   }
-  /* .navigator button {
-    display: none;
-  } */
 }
 @media (min-width: 830px) {
   .responsiveNavbar {
