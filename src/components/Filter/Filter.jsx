@@ -1,7 +1,10 @@
 import { useProducts } from "../../contexts/product-contex";
 import classes from "./Filter.module.css";
 import { category, ratingsBy, sortingBy } from "../../data/filterData";
-const Filter = () => {
+import { useWindowSize } from "../../hooks/useWindowSize";
+
+const Filter = ({ showFilter, setShowFilter }) => {
+  const { width } = useWindowSize();
   const { dispatch, state } = useProducts();
   const { priceInput, categoryFilters, rating, sortBy } = state;
 
@@ -22,13 +25,21 @@ const Filter = () => {
   };
 
   return (
-    <div className={classes.container}>
+    <div
+      className={
+        showFilter && width < 800 ? classes.mobileContainer : classes.container
+      }
+    >
       <div className={classes.filterHeader}>
         <p>Filter</p>
 
-        <button onClick={() => dispatch({ type: "CLEAR_FILTER" })}>
-          clear
-        </button>
+        {showFilter ? (
+          <button onClick={() => setShowFilter(false)}>Apply</button>
+        ) : (
+          <button onClick={() => dispatch({ type: "CLEAR_FILTER" })}>
+            clear
+          </button>
+        )}
       </div>
 
       <div className={classes.filterByCategory}>
@@ -93,6 +104,7 @@ const Filter = () => {
           min={0}
           max={5000}
           step={500}
+          value={priceInput}
           onChange={(event) =>
             dispatch({ type: "PRICE_RANGE_INPUT", payload: event.target.value })
           }
