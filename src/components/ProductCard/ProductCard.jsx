@@ -3,12 +3,9 @@ import { RiHeartAddLine, BsFillHeartFill } from "../../assets/icon";
 import classes from "./ProductCard.module.css";
 import { useProducts } from "../../contexts/product-contex";
 import { getIsInProducts } from "../../utils";
-import { useAuth } from "../../contexts/auth-context";
 
 const ProductsCard = ({ product }) => {
   const navigate = useNavigate();
-  const { authState } = useAuth();
-  const { user } = authState;
   const { state, removeWishlistHandler, addToWishlistHandler } = useProducts();
   const { wishlist } = state;
   const {
