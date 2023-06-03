@@ -13,10 +13,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <AuthProvider>
         <ToastContainer
-          position="bottom-left"
+          position="top-center"
           pauseOnHover={false}
           theme="colored"
           draggable={true}
+          style={{ zIndex: 9999 }}
         />
         <ProductProvider>
           <App />
