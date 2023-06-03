@@ -41,20 +41,7 @@ const CartCard = ({ product }) => {
     toast.success("Quantity increase");
   };
 
-  const existingProduct = cart.find(
-    (element) => element.productId === product.productId
-  );
 
-  // if (existingProduct) {
-  //   const updatedCart = cart.map((element) =>
-  //     element.productId === product.productId
-  //       ? { ...element, quantity: element.quantity + 1 }
-  //       : element
-  //   );
-  //   dispatch({ type: "EXISTING_PRODUCT", payload: updatedCart });
-  // } else {
-  //   dispatch({ type: "EXISTING_PRODUCT", payload: cart });
-  // }
   return (
     <div className={classes.CartCardContainer}>
       <img src={product?.thumbnail} alt="" />
