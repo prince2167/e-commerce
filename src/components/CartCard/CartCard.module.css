@@ -2,6 +2,7 @@
   display: flex;
   gap: 20px;
   max-width: 360px;
+  width: 100%;
 }
 
 .CartCardContainer img {
@@ -70,5 +71,6 @@
 @media (max-width: 365px) {
   .CartCardContainer {
     margin: 10px;
+    width: 310px;
   }
 }
