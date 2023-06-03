@@ -1,10 +1,14 @@
 .container {
   padding: 15px;
-  position: fixed;
-  max-width: 15rem;
-  width: 15rem;
+  display: block;
   min-height: 100vh;
+  width: 15rem;
+  background: #fff;
+  position: fixed;
+  left: 0;
+ 
 }
+
 .filterHeader {
   display: flex;
   justify-content: space-between;
@@ -114,8 +118,17 @@
   cursor: pointer;
 }
 
-@media (max-width: 522px) {
+@media (max-width: 800px) {
   .container {
     display: none;
+  }
+  .mobileContainer {
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 9999;
+    min-height: 100vh;
   }
 }
