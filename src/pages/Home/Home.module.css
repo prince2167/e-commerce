@@ -3,20 +3,52 @@
   justify-content: center;
   margin-top: 5rem;
 }
-.filterContainer {
-  width: 15rem;
-}
 .cardList {
   display: flex;
   justify-content: center;
   gap: 25px;
   flex-wrap: wrap;
   width: calc(100% - 15rem);
+  margin-left: 15rem;
+}
+.bottomBar {
+  display: none;
 }
 
+.bottomBar button {
+  border: none;
+  background-color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
 @media (max-width: 830px) {
   .homePage {
     margin-top: 7rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .cardList {
+    margin-left: 0;
+  }
+  .bottomBar {
+    height: 3.5rem;
+    background: #000;
+    width: 100%;
+    background-color: #fff;
+    z-index: 9999;
+    position: sticky;
+    bottom: 0;
+    display: block;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid black;
+  }
+  .cardList {
+   justify-content: space-around;
+    width: 100vw;
   }
 }
 @media (max-width: 522px) {
@@ -24,17 +56,9 @@
     flex-direction: column;
     gap: 2rem;
   }
-  .filterContainer {
-    display: none;
-  }
+
   .cardList {
     align-items: center;
     width: 100vw;
-  }
-}
-
-@media (min-width: 522px) {
-  .responsiveFilterContainer {
-    display: none;
   }
 }
