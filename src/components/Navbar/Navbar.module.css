@@ -1,6 +1,6 @@
 nav {
   background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   position: fixed;
   top: 0;
   left: 0;
@@ -14,6 +14,10 @@ nav {
   align-items: center;
   padding: 0.7rem 3rem;
   width: 100%;
+}
+
+nav h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .navigator {
@@ -71,9 +75,6 @@ nav a {
 @media (max-width: 423px) {
   .navigator {
     gap: 1rem;
-  }
-  .links h1 {
-    font-size: 20px;
   }
 }
 @media (min-width: 830px) {
