@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav>
       <div className={classes.navbar}>
         <NavLink to="/">
-          <h1>MyShoppingSite</h1>
+          <h1>CLOTHIFY</h1>
         </NavLink>
         <div className={classes.searchbar}>
           <Searchbar />
@@ -70,7 +70,7 @@ const Navbar = () => {
       <div className={classes.responsiveNavbar}>
         <div className={classes.links}>
           <NavLink to="/">
-            <h1>MyShoppingSite</h1>
+            <h1>CLOTHIFY</h1>
           </NavLink>
 
           <div className={classes.navigator}>
