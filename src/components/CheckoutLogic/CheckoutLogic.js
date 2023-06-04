@@ -1,9 +1,5 @@
 import { toast } from "react-toastify";
 
-const KEY_ID = "rzp_test_MOGxFrLtzC31Cw";
-
-const KEY_SECRECT = "Kwad7BtGBDIcgQZfYMZ3mn9N";
-
 const loadScript = async (url) => {
   return new Promise((resolve) => {
     const script = document.createElement("script");
@@ -31,7 +27,7 @@ const handleCheckout = async (selectedAddress, totalPrice) => {
   }
 
   const razorpayOption = {
-    key: KEY_ID,
+    key: import.meta.env.VITE_APP_RAZORPAY_API_KEY,
     amount: totalPrice * 100,
     currency: "INR",
     name: "CLOTHIFY",
