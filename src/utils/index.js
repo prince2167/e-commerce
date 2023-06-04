@@ -11,11 +11,11 @@ export const getFilteredProducts = (products, filters) => {
 };
 
 export const getFilteredByRating = (products, rating) => {
-  const updatedPeoduct =
+  const updatedProduct =
     rating.length > 0
       ? products.filter((product) => product.rating > rating)
       : products;
-  return updatedPeoduct;
+  return updatedProduct;
 };
 
 export const getSortedByPrice = (products, sortBy) => {
