@@ -4,6 +4,10 @@ import {
   AiOutlineHeart,
   AiOutlineArrowLeft,
   AiOutlineArrowRight,
+  AiOutlineInstagram,
+  AiFillLinkedin,
+  AiFillGithub,
+  AiOutlineTwitter,
 } from "react-icons/ai";
 import { RiHeartAddLine } from "react-icons/ri";
 import { BsFillHeartFill } from "react-icons/bs";
@@ -19,4 +23,8 @@ export {
   RiAccountCircleFill,
   AiOutlineArrowLeft,
   AiOutlineArrowRight,
+  AiOutlineInstagram,
+  AiFillLinkedin,
+  AiFillGithub,
+  AiOutlineTwitter,
 };
