@@ -1,10 +1,15 @@
 import classes from "./Checkout.module.css";
 import { address } from "../../data/filterData";
 import { useProducts } from "../../contexts/product-contex";
+import { handleCheckout } from "../../components/CheckoutLogic/CheckoutLogic";
 const Checkout = () => {
   const { state, dispatch } = useProducts();
   const { selectedAddress, cart, totalMrp, totalPrice } = state;
   const discountPrice = totalMrp - totalPrice;
+
+  const handleCheckoutClick = () => {
+    handleCheckout(selectedAddress, totalPrice);
+  };
 
   return (
     <div className={classes.checkoutPage}>
@@ -74,7 +79,9 @@ const Checkout = () => {
               </div>
             ))}
           </div>
-          <button className={classes.orderPlace}>Place Order</button>
+          <button className={classes.orderPlace} onClick={handleCheckoutClick}>
+            Place Order
+          </button>
         </div>
       </div>
     </div>
