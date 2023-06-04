@@ -8,7 +8,7 @@ const ImageSlider = ({ images }) => {
 
   return (
     <div className={classes.images}>
-      <img src={images[currentIndex].url} />
+      <img src={images[currentIndex]?.url} />
       <AiOutlineArrowLeft
         size="40"
         className={
