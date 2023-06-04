@@ -29,6 +29,7 @@ const Home = () => {
   };
 
   const filteredProducts = getFilteredProducts(products, categoryFilters);
+  
   const filteredByRatingProducts = getFilteredByRating(
     filteredProducts,
     rating
