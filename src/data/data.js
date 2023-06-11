@@ -6,7 +6,7 @@ export const products = [
       "Light Blue floral printed Casual shirt ,has a cutaway collar, button placket, long regular sleeves, curved hem",
     productId: 4514109,
     quantity: 1,
-    price: 1373,
+    price: 1374,
     mrp: 2495,
     rating: 4.5,
     discountDisplayLabel: "45% off",
