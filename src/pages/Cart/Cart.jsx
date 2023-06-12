@@ -25,26 +25,28 @@ const Cart = () => {
   }, [cart]);
   const discountPrice = totalMrp - totalPrice;
   if (isLoading) return <Loader />;
+  // 👇️ scroll to top on page load
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
   return (
     <>
       <div className={classes.cartpage}>
-        <diV className={classes.emptyCard}>
-          {cart.length === 0 && (
-            <div className={classes.emptyCartCardContainer}>
-              <img src={emptyCart} alt="cart empty" />
-              <div className={classes.emptyCartText}>
-                <h1>Your shopping bag is empty!</h1>
-                <p>
-                  Looks like you haven’t added anything to your bag. Let’s
-                  change that.
-                </p>
-                <button onClick={() => navigate("/home")}>
-                  Back to shopping
-                </button>
-              </div>
+        {cart.length === 0 && (
+          <div className={classes.emptyCard}>
+            <img src={emptyCart} alt="cart empty" />
+            <div className={classes.emptyCartText}>
+              <h1>Your shopping bag is empty!</h1>
+              <p>
+                Looks like you haven’t added anything to your bag. Let’s change
+                that.
+              </p>
+              <button onClick={() => navigate("/home")}>
+                Back to shopping
+              </button>
             </div>
-          )}
-        </diV>
+          </div>
+        )}
 
         <div className={classes.cartCardList}>
           {cart.map((product) => (
