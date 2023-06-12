@@ -1,12 +1,14 @@
 import { useNavigate } from "react-router";
 import { emptyWishlist } from "../../assets/images";
-import { WishlistCard } from "../../components/index";
+import { Loader, WishlistCard } from "../../components/index";
 import { useProducts } from "../../contexts/product-contex";
 import classes from "./Wishlist.module.css";
 const Wishlist = () => {
   const { state } = useProducts();
-  const { wishlist } = state;
+  const { wishlist, isLoading } = state;
   const navigate = useNavigate();
+
+  if (isLoading) return <Loader />;
   return (
     <div className={classes.wishlistPage}>
       {wishlist.length === 0 && (
