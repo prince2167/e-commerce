@@ -36,7 +36,7 @@ const Navbar = () => {
               <NavLink to="/wishlist">
                 <AiOutlineHeart size="23" />
               </NavLink>
-              {wishlist.length > 0 && (
+              {wishlist?.length > 0 && (
                 <p className={classes.wishlistLength}>{wishlist.length}</p>
               )}
             </div>
@@ -53,7 +53,7 @@ const Navbar = () => {
               <NavLink to="/cart">
                 <MdOutlineShoppingCart size="23" />
               </NavLink>
-              {cart.length > 0 && (
+              {cart?.length > 0 && (
                 <p className={classes.cartLength}>{cart.length}</p>
               )}
             </div>
@@ -83,7 +83,7 @@ const Navbar = () => {
                 <NavLink to="wishlist">
                   <AiOutlineHeart size="23" />
                 </NavLink>
-                {wishlist.length > 0 && (
+                {wishlist?.length > 0 && (
                   <p className={classes.wishlistLength}>{wishlist.length}</p>
                 )}
               </div>
@@ -100,7 +100,7 @@ const Navbar = () => {
                 <NavLink to="/cart">
                   <MdOutlineShoppingCart size="23" />
                 </NavLink>
-                {cart.length > 0 && (
+                {cart?.length > 0 && (
                   <p className={classes.cartLength}>{cart.length}</p>
                 )}
               </div>
