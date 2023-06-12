@@ -51,7 +51,7 @@ const Filter = ({ showFilter, setShowFilter }) => {
               type="checkbox"
               value={item}
               onChange={categoryCheckboxHandler}
-              checked={categoryFilters.includes(item)}
+              checked={categoryFilters?.includes(item)}
             />
             <p>{item}</p>
           </label>
