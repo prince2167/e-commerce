@@ -3,12 +3,17 @@ import { emptyWishlist } from "../../assets/images";
 import { Loader, WishlistCard } from "../../components/index";
 import { useProducts } from "../../contexts/product-contex";
 import classes from "./Wishlist.module.css";
+import { useEffect } from "react";
 const Wishlist = () => {
   const { state } = useProducts();
   const { wishlist, isLoading } = state;
   const navigate = useNavigate();
 
   if (isLoading) return <Loader />;
+  // 👇️ scroll to top on page load
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
   return (
     <div className={classes.wishlistPage}>
       {wishlist.length === 0 && (
