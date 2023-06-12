@@ -2,7 +2,7 @@ export const initialState = {
   products: [],
   wishlist: [],
   cart: [],
-  priceInput: "",
+  priceInput: 0,
   categoryFilters: [],
   rating: "",
   sortBy: "",
@@ -40,7 +40,7 @@ export const productReducer = (state, action) => {
     case "ADD_TO_WISHLIST": {
       return {
         ...state,
-        wishlist: [payload, ...state.wishlist],
+        wishlist: [payload, ...state?.wishlist],
       };
     }
     case "REMOVE_FROM_WISHLIST": {
@@ -52,7 +52,7 @@ export const productReducer = (state, action) => {
     case "ADD_TO_CART": {
       return {
         ...state,
-        cart: [payload, ...state.cart],
+        cart: [payload, ...state?.cart],
       };
     }
     case "ADD_TO_CART_FROM_WISHLIST": {
@@ -143,10 +143,10 @@ export const productReducer = (state, action) => {
     case "CLEAR_FILTER": {
       return {
         ...state,
-        priceInput: initialState.priceInput,
-        categoryFilters: initialState.categoryFilters,
-        rating: initialState.rating,
-        sortBy: initialState.sortBy,
+        priceInput: 0,
+        categoryFilters: [],
+        rating: "",
+        sortBy: "",
       };
     }
     case "IS_SORTBY": {
