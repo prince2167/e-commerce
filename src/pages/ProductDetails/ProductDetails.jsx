@@ -4,7 +4,7 @@ import { useAuth } from "../../contexts/auth-context";
 import { RiHeartAddLine, BsFillHeartFill } from "../../assets/icon";
 import classes from "./ProductDetails.module.css";
 import { getIsInProducts } from "../../utils";
-import { ImageSlider } from "../../components/index";
+import { ImageSlider, Loader } from "../../components/index";
 
 const ProductDetails = () => {
   const { productId } = useParams();
@@ -17,7 +17,7 @@ const ProductDetails = () => {
     addToWishlistHandler,
     addToCartHandler,
   } = useProducts();
-  const { products, wishlist, cart } = state;
+  const { products, wishlist, cart, isLoading } = state;
   const product = products.find(
     (product) => product.productId === Number(productId)
   );
@@ -26,6 +26,7 @@ const ProductDetails = () => {
   const isInCart = getIsInProducts(cart, productId);
   const navigate = useNavigate();
 
+  if (isLoading) return <Loader />;
   return (
     <div className={classes.productDetailsConatiner}>
       <>
