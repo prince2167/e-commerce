@@ -9,4 +9,7 @@ const emptyCart =
 
 const userImage =
   "https://res.cloudinary.com/dptfwcnro/image/upload/v1685077996/E-comm%20ATTIREX/avtar/pngtree-beard-family-girl-playing-avatar-image_1138008_f8w31f.jpg";
-export { headerImage, emptyWishlist, emptyCart, userImage };
+
+const imageNotAvailable =
+  "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png?20210219185637";
+export { headerImage, emptyWishlist, emptyCart, userImage, imageNotAvailable };
