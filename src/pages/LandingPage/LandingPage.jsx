@@ -2,9 +2,14 @@ import { useNavigate } from "react-router-dom";
 import { headerImage } from "../../assets/images";
 import classes from "./LandingPage.module.css";
 import { Footer } from "../../components/index";
+import { useEffect } from "react";
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  // 👇️ scroll to top on page load
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
   return (
     <div className={classes.landingPage}>
       <div className={classes.headerImage}>
