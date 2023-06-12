@@ -8,7 +8,7 @@ import {
   getSortedByPrice,
   getSortedProductsBySlider,
 } from "../../utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const Home = () => {
   const [showFilter, setShowFilter] = useState(false);
   const { state, dispatch } = useProducts();
@@ -29,7 +29,7 @@ const Home = () => {
   };
 
   const filteredProducts = getFilteredProducts(products, categoryFilters);
-  
+
   const filteredByRatingProducts = getFilteredByRating(
     filteredProducts,
     rating
@@ -44,6 +44,10 @@ const Home = () => {
   );
   const searchedProducts = getSearchProducts(sortedProducts, searchTerm);
 
+  // 👇️ scroll to top on page load
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
   if (isLoading) return <Loader />;
   return (
     <>
