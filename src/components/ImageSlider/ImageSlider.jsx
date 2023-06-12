@@ -1,4 +1,5 @@
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "../../assets/icon";
+import { imageNotAvailable } from "../../assets/images";
 import { useProducts } from "../../contexts/product-contex";
 import classes from "./ImageSlider.module.css";
 
@@ -8,7 +9,7 @@ const ImageSlider = ({ images }) => {
 
   return (
     <div className={classes.images}>
-      <img src={images[currentIndex]?.url} />
+      <img src={images[currentIndex]?.url} alt={imageNotAvailable} />
       <AiOutlineArrowLeft
         size="40"
         className={
