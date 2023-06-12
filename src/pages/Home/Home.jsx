@@ -51,11 +51,11 @@ const Home = () => {
         <Filter showFilter={showFilter} setShowFilter={setShowFilter} />
 
         <div className={classes.cardList}>
-          {searchedProducts.map((product) => (
+          {searchedProducts?.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
 
-          {searchedProducts.length === 0 && <h1>Product does not found...</h1>}
+          {searchedProducts?.length === 0 && <h1>Product does not found...</h1>}
         </div>
       </div>
       <div className={classes.bottomBar}>
