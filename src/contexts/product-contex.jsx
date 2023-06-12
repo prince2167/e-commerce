@@ -7,15 +7,8 @@ import { useAuth } from "./auth-context";
 import { useNavigate } from "react-router";
 const ProductContext = createContext();
 
-const storedData = (initialState) =>
-  JSON.parse(localStorage.getItem("state")) || initialState;
-
 const ProductProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(
-    productReducer,
-    initialState,
-    storedData
-  );
+  const [state, dispatch] = useReducer(productReducer, initialState);
 
   const navigate = useNavigate();
   const { authState } = useAuth();
@@ -44,9 +37,9 @@ const ProductProvider = ({ children }) => {
     user && toast.success("Add to cart");
   };
   // local storage
-  useEffect(() => {
-    localStorage.setItem("state", JSON.stringify(state));
-  }, [state]);
+  // useEffect(() => {
+  //   localStorage.setItem("state", JSON.stringify(state));
+  // }, [state]);
 
   const fetchData = async () => {
     try {
