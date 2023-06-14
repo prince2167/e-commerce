@@ -19,17 +19,13 @@ export const getFilteredByRating = (products, rating) => {
 };
 
 export const getSortedByPrice = (products, sortBy) => {
-  let updatedProducts = [];
   if (sortBy === "Price: Low to High") {
-    updatedProducts = products.sort((a, b) => a.price - b.price);
+    return [...products].sort((a, b) => a.price - b.price);
   }
   if (sortBy === "Price: High to Low") {
-    updatedProducts = products.sort((a, b) => b.price - a.price);
+    return [...products].sort((a, b) => b.price - a.price);
   }
-  if (sortBy === "") {
-    updatedProducts = products;
-  }
-  return updatedProducts;
+  return products;
 };
 
 export const getSortedProductsBySlider = (products, value) => {
