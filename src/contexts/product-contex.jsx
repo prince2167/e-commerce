@@ -20,21 +20,21 @@ const ProductProvider = ({ children }) => {
     );
     dispatch({ type: "REMOVE_FROM_WISHLIST", payload: updatedWishlist });
 
-    toast.success("Remove from wishlist");
+    toast.success("Product remove from wishlist");
   };
 
   const addToWishlistHandler = (product) => {
     user
       ? dispatch({ type: "ADD_TO_WISHLIST", payload: product })
       : navigate("/login");
-    user && toast.success("Add to wishlist");
+    user && toast.success("Product added to wishlist");
   };
 
   const addToCartHandler = (product) => {
     user
       ? dispatch({ type: "ADD_TO_CART", payload: product })
       : navigate("/login");
-    user && toast.success("Add to cart");
+    user && toast.success("Product added to cart");
   };
   // local storage
   // useEffect(() => {

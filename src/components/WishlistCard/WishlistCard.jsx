@@ -28,7 +28,7 @@ const WishlistCard = ({ product }) => {
       type: "ADD_TO_CART_FROM_WISHLIST",
       payload: { product, updatedWishlist },
     });
-    toast.success("Add to cart");
+    toast.success("Product added to cart");
   };
   const isInWishlist = getIsInProducts(wishlist, productId);
   const isInCart = cart.some(
