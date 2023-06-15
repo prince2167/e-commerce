@@ -36,3 +36,5 @@ Visit the live demo link [Clothify](https://prince-clothify.vercel.app/).
 The website will automatically adapt to the screen size and display properly on your mobile device.
 
 Navigate through the different pages and explore the features of Clothify.
+
+https://github.com/prince2167/e-commerce/assets/109654181/4d1f669a-4691-430f-bab8-7317f68857d2
