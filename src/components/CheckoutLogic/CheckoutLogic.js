@@ -37,7 +37,7 @@ const handleCheckout = async (selectedAddress, totalPrice) => {
       "https://scontent.fdel7-1.fna.fbcdn.net/v/t39.30808-6/311603128_210093544709043_8572712917983816564_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=qqhOEDibzXMAX9zIJZ8&_nc_ht=scontent.fdel7-1.fna&oh=00_AfDIz-GUgIkXFFKYv_B7Yv4kGMS1eHExhTOCmnGaH1XJDw&oe=6481BD9F",
 
     handler: function (response) {
-      toast.success("Payment successful!", response);
+      toast.success("Payment successfull", response);
     },
 
     prefill: {
