@@ -10,11 +10,29 @@ The ultimate fashion e-commerce platform. Discover the latest trends and stylish
 
 ## How to run the app locally?
 
-  git clone https://github.com/prince2167/e-commerce.git
-  cd  src
-  npm install
-  npm run dev
+Clone the project
 
+```bash
+  git clone https://github.com/prince2167/e-commerce.git
+```
+
+Go to the project directory
+
+```bash
+  cd Clothify
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
 
 ## Tech Stack
 
