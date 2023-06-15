@@ -27,7 +27,7 @@ const SignUp = () => {
       if (password === confirmPassword) {
         await googleSignin();
         navigate("/");
-        toast.success("Login successful");
+        toast.success("Hey! Welcome to clothify");
       } else {
         alert("Password does not match");
         toast.warning("Password does not match");

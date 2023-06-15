@@ -15,7 +15,7 @@ const Login = () => {
     try {
       await login(email, password);
       navigate("/");
-      toast.success("Login successful!!");
+      toast.success("Hey! Welcome to clothify");
     } catch (error) {
       authDispatch({ type: "ERROR", payload: error.message });
       toast.error("User does not exist! Please singup");
@@ -26,7 +26,7 @@ const Login = () => {
     event.preventDefault();
     try {
       await googleSignin();
-      toast.success("Login successful");
+      toast.success("Hey! Welcome to clothify");
       navigate("/");
     } catch (error) {
       authDispatch({ type: "ERROR", payload: error.message });
